@@ -1,58 +1,92 @@
 name: Bug report
-description: The panel does not show, crashes the game, looks wrong, or a VR control does not work.
+description: Something doesn't work (no screen in VR, a black or wrong picture, the bars do not open, a button does nothing, a crash)
 title: "[Bug] "
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        **Before you write:** make the problem happen once more (start the game in VR, do what goes wrong), then close the game.
-        Then open the folder: paste `%LOCALAPPDATA%\Monitor in VR Game` into the Explorer address bar.
-        The log is `logs\monitor_in_vr_game.log` there. Without the log I usually cannot tell what happened.
+        Thanks for reporting! Monitor in VR Game is a free community project, and reports like yours make it better for everyone.
+
+        **Please write in English**, so that everybody can read your issue and help. Not everyone understands your
+        language, but most people read English. A translation tool (DeepL, Google Translate) is fine.
+
+        **Before you write, make the log (it takes a minute):**
+        1. Start the game in VR and do what goes wrong (1 to 2 minutes).
+        2. **Quit the game.**
+        3. Paste `%LOCALAPPDATA%\Monitor in VR Game` into the Explorer address bar. Attach the files below from there.
+
+        More help: [Reporting a problem (what to upload)](https://github.com/JRDevo/Monitor-in-VR-Game#reporting-a-problem-what-to-upload).
   - type: textarea
     id: what
     attributes:
-      label: What happens
-      description: What you did, what you expected, and what you got. Say when it happens (always, only with two monitors, after a few minutes, ...).
-      placeholder: |
-        I started the game in VR and pressed Backslash.
-        No panel appears / the panel is black / the game crashes / the bars do not open.
+      label: What happens?
+      description: What you did (which button, which bar, which settings page), what you expected, and what happened instead.
+      placeholder: "Example: I rest the pointer on the screen for 3 s. The ring fills up, but the bars do not open."
     validations:
       required: true
   - type: input
     id: game
     attributes:
       label: Game
-      description: Game name and how it runs in VR (OpenXR, SteamVR, ...).
-      placeholder: "American Truck Simulator (OpenXR beta)"
+      description: The game's name. Does the same problem happen in another OpenXR game?
+      placeholder: "Example: American Truck Simulator (OpenXR beta). Beat Saber works."
+    validations:
+      required: true
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: OpenXR runtime
+      description: The program that runs the game in VR.
+      options:
+        - Virtual Desktop (VDXR)
+        - SteamVR
+        - Oculus / Meta Link (Air Link, cable)
+        - Windows Mixed Reality
+        - Pimax / Varjo / other
+        - Don't know
     validations:
       required: true
   - type: input
     id: headset
     attributes:
-      label: Headset and how it connects
-      placeholder: "Quest 3 via Virtual Desktop / Quest Link / Steam Link / Index / ..."
+      label: VR headset
+      placeholder: "Example: Quest 3"
+    validations:
+      required: true
+  - type: dropdown
+    id: controllers
+    attributes:
+      label: Controllers
+      options:
+        - Oculus / Meta Touch
+        - Valve Index
+        - HTC Vive wands
+        - Windows Mixed Reality
+        - HP Reverb G2
+        - Other (write it under "What happens?")
     validations:
       required: true
   - type: input
-    id: gpu
+    id: monitors
     attributes:
-      label: GPU, driver version and monitors
-      placeholder: "RTX 4070, driver 580.xx, two monitors 2560x1440 + 1920x1080"
+      label: GPU, driver and monitors
+      placeholder: "Example: RTX 4070, driver 580.xx, two monitors: 2560x1440 + 1920x1080"
     validations:
       required: true
   - type: input
     id: version
     attributes:
       label: Monitor in VR Game version
-      placeholder: "0.1.0"
+      description: The top line of the log says it.
+      placeholder: "Example: 0.1.0"
     validations:
       required: true
   - type: input
-    id: mods
+    id: addons
     attributes:
-      label: Other overlays or mods
-      description: OpenXR Toolkit, VR EyeCapture, other OpenXR layers, ReShade, overlay apps, ... ("none" if none).
+      label: Other VR add-ons
+      description: OpenXR Toolkit, VR EyeCapture, OpenKneeboard, other OpenXR layers, ReShade, overlay apps, ... Write "none" if there are none.
     validations:
       required: true
   - type: textarea
@@ -60,11 +94,13 @@ body:
     attributes:
       label: Files (drag them into this box)
       description: |
-        - `monitor_in_vr_game.log` (**required**; no file = the layer did not load in the game, say so)
-        - `config.ini` (**required**). GitHub does not take `.ini` files: rename it to `config.txt` or zip it.
-        - A screenshot or short clip of the problem (optional)
+        **Required:** `logs\monitor_in_vr_game.log` and `config.ini`, both in `%LOCALAPPDATA%\Monitor in VR Game`.
+        GitHub does not take `.ini` files: rename it to `config.txt` or zip it.
+        Attach them as files; please do not paste the text. A screenshot or short video helps too.
+        No `monitor_in_vr_game.log` at all? Write that here: then the layer did not load, and that is useful to know.
 
         **Privacy:** the log contains folder paths with your Windows user name. Open it and check before uploading.
+      placeholder: Drop monitor_in_vr_game.log and config.txt here.
     validations:
       required: true
   - type: checkboxes
@@ -74,5 +110,5 @@ body:
       options:
         - label: I use the latest version from the Releases page of this repository.
           required: true
-        - label: I attached monitor_in_vr_game.log and config.ini (or said that the log does not exist).
+        - label: I quit the game before I took the log.
           required: true

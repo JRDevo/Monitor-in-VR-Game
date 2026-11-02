@@ -1,13 +1,17 @@
 name: Feature request
-description: An idea for Monitor in VR Game (a new setting, a game or headset to support, a better control).
+description: An idea for Monitor in VR Game (a button, a setting, a game or headset to support, a better control)
 title: "[Feature] "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks, ideas are welcome. Say what it would do for **you**, not only how to build it.
-        If something does not work as it should, that is a **Bug report** (with the log), not a feature request.
+        Thanks! Ideas are welcome. Say what it would do for **you** in the game, not only how to build it.
+
+        **Please write in English**, so that everybody can read your idea and join in. A translation tool
+        (DeepL, Google Translate) is fine.
+
+        If a feature does not seem to work, that is a **Bug report** (with the log), not a feature request.
   - type: textarea
     id: what
     attributes:
@@ -18,29 +22,37 @@ body:
   - type: textarea
     id: why
     attributes:
-      label: Why? What would it do for you?
-      description: The problem it solves or what it improves, and how often you would use it.
+      label: Why? What would it do for you in the game?
+      description: The problem it solves or the thing it improves (comfort, fewer trips out of VR, a game that does not work yet).
     validations:
       required: true
   - type: dropdown
+    id: often
+    attributes:
+      label: How often would you use it?
+      options:
+        - Every game session
+        - Now and then
+        - Once, to set up
+  - type: checkboxes
     id: where
     attributes:
       label: Where would it live?
+      description: Tick all that fit.
       options:
-        - A button on a bar
-        - A setting on the in-VR settings page
-        - A config.ini key only
-        - A key or controller button
-        - Don't know
-    validations:
-      required: true
+        - label: A button on a bar
+        - label: The settings page in VR
+        - label: A key or controller button
+        - label: A `config.ini` key only
+        - label: Don't know
   - type: input
     id: setup
     attributes:
-      label: Your setup (helps to judge the cost)
-      placeholder: "Game, headset and how it connects, GPU, Monitor in VR Game version"
+      label: Your setup
+      description: Game, VR headset, how it connects, Monitor in VR Game version.
+      placeholder: "Example: American Truck Simulator, Quest 3 via Virtual Desktop, 0.1.0"
   - type: textarea
     id: more
     attributes:
       label: Anything else
-      description: Links, screenshots, a log if it shows the thing you want changed.
+      description: Links, screenshots, or the log if it shows the thing you want changed.
