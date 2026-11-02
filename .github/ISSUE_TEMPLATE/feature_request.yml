@@ -1,0 +1,46 @@
+name: Feature request
+description: An idea for Monitor in VR Game (a new setting, a game or headset to support, a better control).
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks, ideas are welcome. Say what it would do for **you**, not only how to build it.
+        If something does not work as it should, that is a **Bug report** (with the log), not a feature request.
+  - type: textarea
+    id: what
+    attributes:
+      label: What should Monitor in VR Game do?
+      description: A short description of the feature. One or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why? What would it do for you?
+      description: The problem it solves or what it improves, and how often you would use it.
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where would it live?
+      options:
+        - A button on a bar
+        - A setting on the in-VR settings page
+        - A config.ini key only
+        - A key or controller button
+        - Don't know
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Your setup (helps to judge the cost)
+      placeholder: "Game, headset and how it connects, GPU, Monitor in VR Game version"
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Links, screenshots, a log if it shows the thing you want changed.

@@ -1,0 +1,78 @@
+name: Bug report
+description: The panel does not show, crashes the game, looks wrong, or a VR control does not work.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you write:** make the problem happen once more (start the game in VR, do what goes wrong), then close the game.
+        Then open the folder: paste `%LOCALAPPDATA%\Monitor in VR Game` into the Explorer address bar.
+        The log is `logs\monitor_in_vr_game.log` there. Without the log I usually cannot tell what happened.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: What you did, what you expected, and what you got. Say when it happens (always, only with two monitors, after a few minutes, ...).
+      placeholder: |
+        I started the game in VR and pressed Backslash.
+        No panel appears / the panel is black / the game crashes / the bars do not open.
+    validations:
+      required: true
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      description: Game name and how it runs in VR (OpenXR, SteamVR, ...).
+      placeholder: "American Truck Simulator (OpenXR beta)"
+    validations:
+      required: true
+  - type: input
+    id: headset
+    attributes:
+      label: Headset and how it connects
+      placeholder: "Quest 3 via Virtual Desktop / Quest Link / Steam Link / Index / ..."
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU, driver version and monitors
+      placeholder: "RTX 4070, driver 580.xx, two monitors 2560x1440 + 1920x1080"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Monitor in VR Game version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: mods
+    attributes:
+      label: Other overlays or mods
+      description: OpenXR Toolkit, VR EyeCapture, other OpenXR layers, ReShade, overlay apps, ... ("none" if none).
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Files (drag them into this box)
+      description: |
+        - `monitor_in_vr_game.log` (**required**; no file = the layer did not load in the game, say so)
+        - `config.ini` (**required**). GitHub does not take `.ini` files: rename it to `config.txt` or zip it.
+        - A screenshot or short clip of the problem (optional)
+
+        **Privacy:** the log contains folder paths with your Windows user name. Open it and check before uploading.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I use the latest version from the Releases page of this repository.
+          required: true
+        - label: I attached monitor_in_vr_game.log and config.ini (or said that the log does not exist).
+          required: true
