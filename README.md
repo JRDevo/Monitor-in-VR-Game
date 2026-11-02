@@ -53,6 +53,9 @@ Get **`MonitorInVRGame-Setup-x.y.z.exe`** from the [Releases](https://github.com
 - Any OpenXR runtime: Virtual Desktop (VDXR), SteamVR, Oculus / Meta Link, and others.
 - Games that use only SteamVR's own API (OpenVR) do not work yet.
 
+**Tested in:** American Truck Simulator (OpenXR beta) and Beat Saber. Other Direct3D 11 OpenXR games should work the
+same way. Tried another game? Please tell me in an issue whether it works.
+
 ## Install
 
 1. Close the game.
@@ -128,4 +131,5 @@ Free for noncommercial use: [PolyForm Noncommercial 1.0.0](LICENSE.md). Third-pa
 
 *Keywords: desktop in VR, monitor in VR, second screen in VR game, watch YouTube in VR while gaming, browser in VR game,
 OpenXR overlay, OpenXR API layer, Quest 3, Virtual Desktop, SteamVR, Euro Truck Simulator 2 VR, American Truck Simulator VR,
+Beat Saber,
 sim racing overlay, virtual screen, VR desktop overlay, desktop capture, Windows.*
