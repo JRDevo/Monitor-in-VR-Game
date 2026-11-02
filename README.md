@@ -19,8 +19,8 @@ smaller, and use media buttons (play / pause, next, volume) right on the panel.
 The game keeps focus and keeps every key. Nothing is clicked on your desktop, no window is opened, no overlay app runs.
 
 **In short:** a free **desktop-in-VR overlay** for Windows, made as an **OpenXR API layer**. It works with **Meta Quest 3**
-(Virtual Desktop or Link), **SteamVR** and any other OpenXR runtime, in **Direct3D 11 OpenXR games** — for example
-**Euro Truck Simulator 2 / American Truck Simulator** in VR.
+(Virtual Desktop or Link), **SteamVR** and any other OpenXR runtime, in **Direct3D 11 and Direct3D 12 OpenXR games** — for
+example **Euro Truck Simulator 2 / American Truck Simulator**, Beat Saber or Metro Awakening in VR.
 
 ![A desktop monitor floating in a VR game, with the button bars open and the VR controller pointer on it](docs/images/screen_bars.png)
 
@@ -36,6 +36,8 @@ The game keeps focus and keeps every key. Nothing is clicked on your desktop, no
 - **Grab, move and twist** — hold grip on a bar and the screen follows your hand; the stick pushes it away or pulls it closer.
 - **Any size, any place** — 5 cm to 20 m wide, 10 cm to 50 m away, any angle; it stays where you put it.
 - **Media buttons** — previous, play / pause, next, and volume for the media app only (never the game, never the master volume).
+- **Each screen controls its own video** — two monitors, a video on each: each screen's buttons pause, skip or mute the
+  app on ITS monitor (for example Jellyfin on one screen, a browser on the other).
 - **Game sound slider** — make the game quieter against your video, right from VR.
 - **Settings page in VR** — opacity, size, distance, tilt, soft edges, rounded corners, which buttons go on which bar.
 - **One key** — `Backslash` cycles hidden → monitor 1 → monitor 2 → … → hidden.
@@ -63,12 +65,12 @@ Get **`MonitorInVRGame-Setup-x.y.z.exe`** from the [Releases](https://github.com
 ## Requirements
 
 - Windows 10 or 11, 64-bit.
-- A VR game that uses **OpenXR** and **Direct3D 11**.
+- A VR game that uses **OpenXR** and **Direct3D 11 or Direct3D 12**.
 - Any OpenXR runtime: Virtual Desktop (VDXR), SteamVR, Oculus / Meta Link, and others.
 - Games that use only SteamVR's own API (OpenVR) do not work yet.
 
-**Tested in:** American Truck Simulator (OpenXR beta) and Beat Saber. Other Direct3D 11 OpenXR games should work the
-same way. Tried another game? Please tell me in an issue whether it works.
+**Tested in:** American Truck Simulator (OpenXR beta) and Beat Saber (Direct3D 11), and Metro Awakening (Direct3D 12).
+Other OpenXR games should work the same way. Tried another game? Please tell me in an issue whether it works.
 
 ## Install
 
@@ -126,7 +128,7 @@ Every key has a comment in the file. The default file is [docs/config.ini](docs/
 - **No clicking on the desktop from VR.** A click would take the focus from the game. Only the media buttons are sent.
 - The mouse pointer is not drawn yet. HDR desktops and rotated monitors are not handled yet.
 - A monitor on another GPU than the game's works, through a slower copy.
-- Direct3D 11 OpenXR games only, for now.
+- Two windows of the **same** browser count as one media app in Windows: two screens cannot control them apart.
 
 ## Reporting a problem (what to upload)
 
@@ -145,5 +147,5 @@ Free for noncommercial use: [PolyForm Noncommercial 1.0.0](LICENSE.md). Third-pa
 
 *Keywords: desktop in VR, monitor in VR, second screen in VR game, watch YouTube in VR while gaming, browser in VR game,
 OpenXR overlay, OpenXR API layer, Quest 3, Virtual Desktop, SteamVR, Euro Truck Simulator 2 VR, American Truck Simulator VR,
-Beat Saber,
+Beat Saber VR, Metro Awakening VR, DirectX 12 VR overlay,
 sim racing overlay, virtual screen, VR desktop overlay, desktop capture, Windows.*
