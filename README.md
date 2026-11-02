@@ -22,7 +22,9 @@ The game keeps focus and keeps every key. Nothing is clicked on your desktop, no
 (Virtual Desktop or Link), **SteamVR** and any other OpenXR runtime, in **Direct3D 11 OpenXR games** — for example
 **Euro Truck Simulator 2 / American Truck Simulator** in VR.
 
-**Menu:** [Features](#features) · [Download](#-download) · [Requirements](#requirements) · [Install](#install) ·
+![A desktop monitor floating in a VR game, with the button bars open and the VR controller pointer on it](docs/images/screen_bars.png)
+
+**Menu:** [Features](#features) · [Screenshots](#screenshots) · [Download](#-download) · [Requirements](#requirements) · [Install](#install) ·
 [Controls](#vr-controls) · [Keys](#keys) · [Settings](#settings--configini) · [Limits](#limits) ·
 [Troubleshooting](#reporting-a-problem-what-to-upload) · [License](#license)
 
@@ -41,6 +43,18 @@ The game keeps focus and keeps every key. Nothing is clicked on your desktop, no
 - **Sharp and light** — mip maps and soft edges, drawn at the size you see it; a still desktop costs no upload at all.
 - **No window, no overlay app** — one OpenXR layer, added after the game's picture.
 - **Works with [VR EyeCapture](https://github.com/JRDevo/VR-EyeCapture)** — the panel is recorded too.
+
+## Screenshots
+
+The menus are the tool's real pictures. The game and the desktop behind them are made up for these screenshots.
+
+**The settings page next to the screen.** Point and pull the trigger to change a slider.
+
+![The settings page in VR next to the desktop screen: opacity, size, distance, tilt, turn, roll](docs/images/settings_screen.png)
+
+**Every page:** Screen, Bars (which button goes on which bar), Sound (media and game volume) and the help page.
+
+![The Screen, Bars, Sound and help pages of the in-VR settings](docs/images/settings_pages.png)
 
 ## ⬇ Download
 
